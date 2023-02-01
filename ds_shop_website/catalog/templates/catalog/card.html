@@ -1,0 +1,8 @@
+{% extends 'main/base.html' %}
+{% block title %} Страница товара {% endblock %}
+
+{% block content %}
+    {% for i in products %}
+    <h1>Карточка товара {{i.brand}} {{ i.model }}</h1>
+    {% endfor %}
+{% endblock %}

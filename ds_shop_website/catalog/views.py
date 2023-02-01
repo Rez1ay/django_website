@@ -1,17 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from .models import Product
 
 
 def catalog(request):
-    d1 = {
-        'name': 'dv-506',
-        'type': 'magnitola'
-    }
-    d2 = {
-        'name': '1000w',
-        'type': 'dinamiki'
-    }
-    d3 = {
-        'name': '7 цветов'
-    }
-    products = [d1, d2, d3]
+    products = Product.objects.all()
     return render(request, 'catalog/catalog.html', {'products': products})
+
+
+def card(request, card_id):
+    products = Product.objects.filter(id=card_id)
+    return render(request, 'catalog/card.html', {'products': products})
