@@ -8,5 +8,5 @@ def catalog(request):
 
 
 def card(request, card_id):
-    products = Product.objects.filter(id=card_id)
+    products = Product.objects.filter(model=card_id)
     return render(request, 'catalog/card.html', {'products': products})

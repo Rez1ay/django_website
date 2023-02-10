@@ -16,6 +16,14 @@ main {
     margin-top: 15px;
 }
 
+#auth li {
+    padding: 10px;
+}
+
+#auth {
+    margin-left: 600px
+}
+
 header {
     background-color: #6c50bf;
     margin-top: -10px;
@@ -46,15 +54,21 @@ h1 {
 }
 
 .card_img {
+    position: absolute;
+    top: 100px;
     margin-left: 50px;
     height: 600px;
     border: 5px solid #6c50bf
 }
 
-.product_info p {
+.product_info {
     margin-left: 880px;
-    top: 100px;
+    top: 130px;
     position: absolute;
     width: 50%;
     font-size: 30px;
+}
+
+.product_info p {
+    padding-top: 50px;
 }

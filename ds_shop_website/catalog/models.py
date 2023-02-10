@@ -17,4 +17,4 @@ class Product(models.Model):
         verbose_name_plural = 'Товары'
 
     def get_absolute_url(self):
-        return reverse('card', kwargs={'card_id': self.pk})
+        return reverse('card', kwargs={'card_id': self.model})
