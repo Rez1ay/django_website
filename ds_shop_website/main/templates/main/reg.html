@@ -4,11 +4,11 @@
 
 {% block content %}
 <h1>Регистрация</h1>
-<form method="post">
+<form class="form-login" method="post">
     {% csrf_token %}
 
     {% for i in form %}
-    <p><label class="form-label" for="{{ i.id_for_label }}">{{i.label}}: </label>{{ i }}</p>
+    <p><label for="{{ i.id_for_label }}">{{i.label}}: </label>{{ i }}</p>
     <div class="form-error">{{ i.errors }}</div>
     {% endfor %}
 

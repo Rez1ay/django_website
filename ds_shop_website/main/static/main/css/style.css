@@ -9,6 +9,7 @@ main {
     display: inline;
     font-size: 31px;
     padding: 80px;
+    color: white;
 }
 
 .nav ul {
@@ -21,7 +22,7 @@ main {
 }
 
 #auth {
-    margin-left: 600px
+    margin-left: auto;
 }
 
 header {
@@ -54,21 +55,30 @@ h1 {
 }
 
 .card_img {
-    position: absolute;
-    top: 100px;
     margin-left: 50px;
     height: 600px;
     border: 5px solid #6c50bf
 }
 
 .product_info {
-    margin-left: 880px;
-    top: 130px;
     position: absolute;
+    right: 80px;
+    top: 130px;
     width: 50%;
     font-size: 30px;
 }
 
 .product_info p {
     padding-top: 50px;
+}
+
+.form-login {
+    margin-left: auto;
+    margin-right: auto;
+    width: 13em;
+}
+
+.form-login label{
+    padding: 10px;
+
 }
