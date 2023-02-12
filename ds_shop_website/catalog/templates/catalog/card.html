@@ -1,13 +1,14 @@
 {% extends 'main/base.html' %}
-{% block title %} Страница товара {% endblock %}
+
+{% block title %}Страница товара{% endblock %}
 
 {% block content %}
-    {% for i in products %}
-    <h1>{{i.brand}} {{ i.model }}</h1>
-    <img class="card_img" src="{{i.photo.url}}">
-    <div class="product_info">
-        <h3>{{i.price}} руб.</h3>
-        <p>{{i.info}}</p>
-    </div>
-    {% endfor %}
+{% for i in products %}
+<h1>{{i.brand}} {{ i.model }}</h1>
+<img class="card_img" src="{{i.photo.url}}">
+<div class="product_info">
+    <h3>{{i.price}} руб.</h3>
+    <p>{{i.info}}</p>
+</div>
+{% endfor %}
 {% endblock %}
