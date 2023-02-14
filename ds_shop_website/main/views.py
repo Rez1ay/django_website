@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import logout, login
 from .forms import *
 
 
@@ -19,6 +20,11 @@ class RegUser(CreateView):
     template_name = 'main/reg.html'
     success_url = reverse_lazy('home')
 
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('home')
+
 
 class LoginUser(LoginView):
     form_class = AuthenticationForm
@@ -26,3 +32,9 @@ class LoginUser(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('home')
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
+

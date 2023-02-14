@@ -16,9 +16,15 @@
             <li><a href="{% url 'about' %}">О нас</a></li>
         </ul>
         <ul id="auth">
+            {% if request.user.is_authenticated %}
+            <li>{{user.username}}</li>
+            <li>|</li>
+            <li><a href="{% url 'logout' %}">Выход</a></li>
+            {% else %}
             <li><a href="{% url 'reg' %}">Регистрация</a></li>
             <li>|</li>
             <li><a href="{% url 'login' %}">Вход</a></li>
+            {% endif %}
         </ul>
     </header>
     <main>
