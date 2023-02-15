@@ -12,7 +12,7 @@
                 <div class="card shadow-sm">
                     <img src="{{i.photo.url}}">
                     <div class="card-body">
-                        <p class="card-text">{{ i.brand }} {{i.model}}</p>
+                        <p class="card-text">{{i.category}} {{ i.brand }} {{i.model}}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ i.get_absolute_url }}">Подробнее</a></button>
