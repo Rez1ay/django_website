@@ -68,8 +68,9 @@ h1 {
     font-size: 30px;
 }
 
-.product_info p {
-    padding-top: 50px;
+.product_info h3 {
+    padding-bottom: 50px;
+    font-size: 40px;
 }
 
 .form-login {
@@ -80,5 +81,10 @@ h1 {
 
 .form-login label{
     padding: 10px;
+}
 
+.about_us p {
+    font-size: 30px;
+    margin-left: 30px;
+    margin-bottom: 15px;
 }
