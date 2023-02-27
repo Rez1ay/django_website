@@ -38,3 +38,10 @@ def logout_user(request):
     logout(request)
     return redirect('login')
 
+
+def profile(request):
+    if request.user.is_authenticated:
+        return render(request, 'main/profile.html')
+    else:
+        return redirect('/login', permanent=True)
+
