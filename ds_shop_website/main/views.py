@@ -44,4 +44,3 @@ def profile(request):
         return render(request, 'main/profile.html')
     else:
         return redirect('/login', permanent=True)
-
