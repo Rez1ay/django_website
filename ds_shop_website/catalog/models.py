@@ -6,7 +6,7 @@ class Product(models.Model):
     category = models.CharField('Категория', max_length=50)
     brand = models.CharField('Бренд', max_length=50)
     model = models.CharField('Модель', max_length=100)
-    photo = models.ImageField('Фото', upload_to='photo')
+    photo = models.ImageField('Фото', upload_to='product-photo')
     info = models.TextField('Описание')
     price = models.CharField('Цена', max_length=20)
 

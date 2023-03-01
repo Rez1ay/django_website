@@ -2,14 +2,19 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Profile(models.Model):
+    USER_GENDER = (
+        ('Man', 'Мужской'),
+        ('Woman', 'Женский'),
+    )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    photo = models.ImageField('Фото', upload_to='photo', blank=True)
-    address = models.CharField('Адрес', max_length=30, blank=True)
-    age = models.CharField('Возраст', max_length=3, blank=True)
-    gender = models.CharField('Пол', max_length=8, blank=True)
+    photo = models.ImageField('Фото', upload_to='user-photo', blank=True)
+    address = models.CharField('Адрес', max_length=150, blank=True)
+    age = models.PositiveIntegerField('Возраст', validators=[MinValueValidator(12), MaxValueValidator(99)], default=20)
+    gender = models.CharField('Пол', max_length=8, choices=USER_GENDER, blank=True)
 
     class Meta:
         verbose_name = 'Информация о пользователе'
