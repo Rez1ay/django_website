@@ -13,7 +13,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     photo = models.ImageField('Фото', upload_to='user-photo', blank=True)
     address = models.CharField('Адрес', max_length=150, blank=True)
-    age = models.PositiveIntegerField('Возраст', validators=[MinValueValidator(12), MaxValueValidator(99)], default=20)
+    age = models.PositiveIntegerField('Возраст', validators=[MinValueValidator(12), MaxValueValidator(99)], default=0)
     gender = models.CharField('Пол', max_length=8, choices=USER_GENDER, blank=True)
 
     class Meta:

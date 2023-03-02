@@ -9,7 +9,19 @@
     <p>Имя: {{user.first_name}}</p>
     <p>Фамилия: {{user.last_name}}</p>
     <p>Email: {{user.email}}</p>
-    <p>Адрес: {{user.profile.address}}</p>
-    <p>Возраст: {{user.profile.age}}</p>
+    {% if user.profile.address != '' %}
+        <p>Адрес: {{user.profile.address}}</p>
+    {% else %} <p>Адрес: Нет данных (<a href="{% url 'edit' %}">Редактировать</a>)</p>
+    {% endif %}
+    {% if user.profile.age != 0 %}
+        <p>Возраст: {{user.profile.age}}</p>
+    {% else %} <p>Возраст: Нет данных (<a href="{% url 'edit' %}">Редактировать</a>)</p>
+    {% endif %}
+    {% if user.profile.gender == 'Man' %}
+        <p>Пол: Мужчина</p>
+    {% elif user.profile.gender == 'Woman' %}
+        <p>Пол: Женщина</p>
+    {% else %} <p>Пол: Нет данных (<a href="{% url 'edit' %}">Редактировать</a>)</p>
+    {% endif %}
 </div>
 {% endblock %}
